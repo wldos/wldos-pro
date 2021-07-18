@@ -1,0 +1,56 @@
+@import '~antd/es/style/themes/default.less';
+
+/*
+ * 本文件用于定制wldos前端样式。
+ * 顶部导航栏限制宽度，并居中对齐
+ */
+.topNavWldos {
+  :global {
+    .ant-pro-top-nav-header-main {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding-left: 0;
+      /* 小于1200px时 logo左边距24px*/
+      @media screen and (max-width: @screen-xl) {
+        padding-left: 24px;
+      }
+    }
+
+    // 修正面包屑局域与内容不等宽
+    .ant-pro-basicLayout-content > .ant-pro-page-container {
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    // 修正面包屑局域与内容不等宽
+    .ant-pro-page-container-children-content {
+      margin: 24px auto;
+    }
+  }
+}
+
+/* 替换全局logo的css，小屏设备统一使用移动端logo*/
+:global {
+  .ant-pro-global-header-logo a img {
+    @media screen and (max-width: @screen-sm) {
+      content: url(./assets/logo.png);
+    }
+  }
+}
+
+/*
+ * 用于管理端
+ */
+.slideNavWldos {
+  :global {
+    .ant-pro-top-nav-header-main {
+      margin: 0 auto;
+      padding-left: 0;
+      /* 小于1200px时 logo左边距24px*/
+      @media screen and (max-width: @screen-xl) {
+        padding-left: 24px;
+      }
+    }
+  }
+}
+
